@@ -6,15 +6,16 @@
   style="flex: 1; overflow: auto;width: 100%;"
 >
   <view class="container">
-    <view style="height: {{fullscreen === '1' ? 44 : 0}}px; background-color: rgb(249 ,249, 249);" />
-    <view class="header">
-      <view class="btn-wrp left-icon" bind:tap="back">
-        <view class="btn">
-          <image class="icon" src="/images/icon_down_arrow.svg" mode="aspectFit" />
-        </view>
-      </view>
-      <view>New Page</view>
-    </view>
+    <navigation-bar
+      title="{{title}}"
+      background="{{background}}"
+      color="{{color}}"
+      back="{{back}}"
+      loading="{{loading}}"
+      delta="{{delta}}"
+      sideWidth="{{sideWidth}}"
+      fullscreen="{{fullscreen}}"
+    />
     <vertical-drag-gesture-handler
       tag="scroll"
       native-view="scroll-view"
@@ -22,7 +23,7 @@
       simultaneousHandlers="{{ ['pan'] }}"
     >
       <scroll-view
-        style="flex: 1; overflow: auto; width: 100%;"
+        style="flex: 1; overflow: auto; width: 100%;height: 100vh"
         scroll-y
         worklet:onscrollupdate="handleScroll"
         adjustDecelerationVelocity="adjustDecelerationVelocity"
@@ -30,13 +31,8 @@
         refresher-enabled="{{ false }}"
         type="list"
       >
-        <block wx:for="{{list}}" wx:key="id">
-          <view
-            bind:tap="goNextpage"
-            class="item"
-          >{{nextRouteType ? 'tap item' : 'item'}} {{item.id}}</view>
-        </block>
-        <view class="placeholder"></view>
+        <slot />
+        <view class="placeholder" style="height: {{placeholderHeight}}px;"></view>
       </scroll-view>
     </vertical-drag-gesture-handler>
   </view>

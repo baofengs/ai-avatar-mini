@@ -35,6 +35,10 @@ Component({
       type: Number,
       value: 0,
     },
+    fullscreen: {
+      type: Boolean,
+      value: true
+    }
   },
 
   attached() {

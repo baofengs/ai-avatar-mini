@@ -1,5 +1,5 @@
 <swipe-back></swipe-back>
-<page-wrapper title="Detail">
+<page-wrapper title="Dictionary">
   <view class="content">
     <block wx:for="{{list}}" wx:key="id">
       <view bind:tap="goNextpage" class="item">item {{item.id}}</view>

@@ -1,5 +1,9 @@
 {
-  "pages": ["pages/index/index", "pages/favorite/favorite", "index/index", "list/index"],
+  "pages": [
+    "pages/index/index",
+    "pages/favorite/favorite",
+    "pages/dictionary/dictionary"
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
