@@ -1,14 +1,21 @@
-<navigation-bar title="Skyline Route" back="{{false}}" background="rgba(249, 249, 249)" />
-
+<navigation-bar
+  title="Skyline Route"
+  back="{{ false }}"
+  background="rgba(249, 249, 249)"
+/>
 <view class="section">Custom Page Route Example</view>
-<block wx:for="{{list}}" wx:key="id">
+<block
+  wx:for="{{ list }}"
+  wx:key="id"
+>
   <view
     class="item"
     bind:tap="goNextPage"
-    data-route-type="{{item.routeType}}"
-    data-next-route-type="{{item.nextRouteType}}"
-    data-disable-drag="{{item.disableDrag}}"
-    data-fullscreen="{{item.fullscreen}}"
-    >{{item.content}}
-    </view>
+    data-route-type="{{ item.routeType }}"
+    data-next-route-type="{{ item.nextRouteType }}"
+    data-disable-drag="{{ item.disableDrag }}"
+    data-fullscreen="{{ item.fullscreen }}"
+  >
+    {{ item.content }}
+  </view>
 </block>

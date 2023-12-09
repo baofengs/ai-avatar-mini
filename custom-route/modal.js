@@ -1,36 +1,29 @@
-import {
-  Colors,
-  CurveAnimation,
-  Curves,
-} from './util'
+import { Colors, CurveAnimation, Curves } from './util';
 
 const Modal = (customRouteContext) => {
-  const menuRect = wx.getMenuButtonBoundingClientRect()
+  const menuRect = wx.getMenuButtonBoundingClientRect();
 
-  const {
-    primaryAnimation,
-    primaryAnimationStatus,
-    userGestureInProgress,
-  } = customRouteContext
+  const { primaryAnimation, primaryAnimationStatus, userGestureInProgress } =
+    customRouteContext;
 
-  const topRadius = 12
-  const offsetToMuenu = 2
-  const prevPageVisibleOffset = 10
-  const prevPageTop = menuRect.bottom + offsetToMuenu
-  const nextPageTop = prevPageTop + prevPageVisibleOffset
+  const topRadius = 12;
+  const offsetToMuenu = 2;
+  const prevPageVisibleOffset = 10;
+  const prevPageTop = menuRect.bottom + offsetToMuenu;
+  const nextPageTop = prevPageTop + prevPageVisibleOffset;
 
   const _curvePrimaryAnimation = CurveAnimation({
     animation: primaryAnimation,
     animationStatus: primaryAnimationStatus,
     curve: Curves.linearToEaseOut,
-    reverseCurve: Curves.easeInToLinear
-  })
+    reverseCurve: Curves.easeInToLinear,
+  });
 
   const handlePrimaryAnimation = () => {
-    'worklet'
-    let t = primaryAnimation.value
+    'worklet';
+    let t = primaryAnimation.value;
     if (!userGestureInProgress.value) {
-      t = _curvePrimaryAnimation.value
+      t = _curvePrimaryAnimation.value;
     }
 
     return {
@@ -38,13 +31,13 @@ const Modal = (customRouteContext) => {
       borderRadius: `${topRadius}px ${topRadius}px 0px 0px`,
       marginTop: `${nextPageTop}px`,
       transform: `translateY(${(1 - t) * 100}%)`,
-    }
-  }
+    };
+  };
 
   const handlePreviousPageAnimation = () => {
-    'worklet'
-    return {}
-  }
+    'worklet';
+    return {};
+  };
 
   return {
     opaque: false,
@@ -53,8 +46,8 @@ const Modal = (customRouteContext) => {
     transitionDuration: 400,
     reverseTransitionDuration: 400,
     handlePrimaryAnimation,
-    handlePreviousPageAnimation
-  }
-}
+    handlePreviousPageAnimation,
+  };
+};
 
-export default Modal
+export default Modal;

@@ -39,7 +39,9 @@ Component({
 
   attached() {
     const isSupport = !!wx.getMenuButtonBoundingClientRect;
-    const rect = wx.getMenuButtonBoundingClientRect ? wx.getMenuButtonBoundingClientRect() : null;
+    const rect = wx.getMenuButtonBoundingClientRect
+      ? wx.getMenuButtonBoundingClientRect()
+      : null;
     wx.getSystemInfo({
       success: (res) => {
         const ios = !!(res.system.toLowerCase().search('ios') + 1);

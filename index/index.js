@@ -8,7 +8,7 @@ const CustomRotue = {
   CupertinoModal: 'wx://cupertino-modal',
   CupertinoModalInside: 'wx://cupertino-modal-inside',
   ModalNavigation: 'wx://modal-navigation',
-}
+};
 
 Page({
   data: {
@@ -17,7 +17,7 @@ Page({
         id: 0,
         routeType: CustomRotue.BottomSheet,
         disableDrag: 1,
-        content: 'BottomSheet'
+        content: 'BottomSheet',
       },
       {
         id: 1,
@@ -31,20 +31,20 @@ Page({
         routeType: CustomRotue.FadeUpwards,
         nextRouteType: CustomRotue.FadeUpwards,
         fullscreen: 1,
-        content: 'Fade Upwards'
+        content: 'Fade Upwards',
       },
       {
         id: 3,
         routeType: CustomRotue.Zoom,
         nextRouteType: CustomRotue.Zoom,
         fullscreen: 1,
-        content: 'Zoom'
+        content: 'Zoom',
       },
       {
         id: 4,
         routeType: CustomRotue.Modal,
         nextRouteType: CustomRotue.ModalNavigation,
-        content: 'Modal with navigation'
+        content: 'Modal with navigation',
       },
       // {
       //   id: 5,
@@ -57,25 +57,28 @@ Page({
         id: 6,
         routeType: CustomRotue.CupertinoModal,
         nextRouteType: CustomRotue.CupertinoModalInside,
-        content: 'Cupertino Modal inside modal'
+        content: 'Cupertino Modal inside modal',
       },
       {
         id: 7,
         routeType: CustomRotue.CupertinoModal,
         nextRouteType: CustomRotue.ModalNavigation,
         fullscreen: 1,
-        content: 'Cupertino Modal with navigation'
+        content: 'Cupertino Modal with navigation',
       },
-    ]
+    ],
   },
 
   onLoad() {},
 
   goNextPage(e) {
-    const { routeType, nextRouteType, fullscreen, disableDrag } = e.currentTarget.dataset
+    const { routeType, nextRouteType, fullscreen, disableDrag } =
+      e.currentTarget.dataset;
     wx.navigateTo({
-      url: `/list/index?disableDrag=${disableDrag}&fullscreen=${fullscreen}&nextRouteType=${nextRouteType || ''}`,
-      routeType
+      url: `/list/index?disableDrag=${disableDrag}&fullscreen=${fullscreen}&nextRouteType=${
+        nextRouteType || ''
+      }`,
+      routeType,
     });
-  }
+  },
 });

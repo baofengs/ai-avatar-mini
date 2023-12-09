@@ -7,6 +7,9 @@
     "include": []
   },
   "setting": {
+    "useCompilerPlugins": [
+      "sass"
+    ],
     "coverView": true,
     "es6": true,
     "postcss": true,
@@ -24,7 +27,7 @@
   },
   "condition": {},
   "editorSetting": {
-    "tabIndent": "space",
+    "tabIndent": "insertSpaces",
     "tabSize": 2
   }
 }

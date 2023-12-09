@@ -3,47 +3,43 @@ import {
   Curves,
   Colors,
   genSecondaryAnimationHandler,
-} from './util'
+} from './util';
 
-const {
-  Easing
-} = wx.worklet
+const { Easing } = wx.worklet;
 
 const Upwards = (customRouteContext) => {
-  const {
-    primaryAnimation,
-    primaryAnimationStatus,
-    userGestureInProgress,
-  } = customRouteContext
+  const { primaryAnimation, primaryAnimationStatus, userGestureInProgress } =
+    customRouteContext;
 
-  const transitionCurve = Easing.cubicBezier(0.20, 0.00, 0.00, 1.00)
-  
+  const transitionCurve = Easing.cubicBezier(0.2, 0.0, 0.0, 1.0);
+
   const _curvePrimaryAnimation = CurveAnimation({
     animation: primaryAnimation,
     animationStatus: primaryAnimationStatus,
     curve: transitionCurve,
-    reverseCurve: Easing.out(transitionCurve)
-  })
+    reverseCurve: Easing.out(transitionCurve),
+  });
 
   const handlePrimaryAnimation = () => {
-    'worklet'
-    let t = primaryAnimation.value
+    'worklet';
+    let t = primaryAnimation.value;
     if (!userGestureInProgress.value) {
-      t = _curvePrimaryAnimation.value
+      t = _curvePrimaryAnimation.value;
     }
 
     return {
       overflow: 'hidden',
-      transform: `translateY(${(1 - t) * 100}%)`
-    }
-  }
+      transform: `translateY(${(1 - t) * 100}%)`,
+    };
+  };
 
   const handlePreviousPageAnimation = () => {
-    'worklet'
-    return {}
-  }
+    'worklet';
+    return {};
+  };
 
-  const handleSecondaryAnimation = genSecondaryAnimationHandler(customRouteContext)
+  const handleSecondaryAnimation =
+    genSecondaryAnimationHandler(customRouteContext);
 
   return {
     barrierColor: Colors.black26,
@@ -51,8 +47,8 @@ const Upwards = (customRouteContext) => {
     reverseTransitionDuration: 400,
     handlePrimaryAnimation,
     handlePreviousPageAnimation,
-    handleSecondaryAnimation
-  }
-}
+    handleSecondaryAnimation,
+  };
+};
 
-export default Upwards
+export default Upwards;
