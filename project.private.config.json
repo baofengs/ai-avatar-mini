@@ -33,5 +33,38 @@
       ]
     }
   },
-  "libVersion": "latest"
+  "libVersion": "latest",
+  "packOptions": {
+    "ignore": [
+      {
+        "value": "test/test.js",
+        "type": "file"
+      },
+      {
+        "value": "test",
+        "type": "folder"
+      },
+      {
+        "value": ".webp",
+        "type": "suffix"
+      },
+      {
+        "value": ".ttf",
+        "type": "suffix"
+      },
+      {
+        "value": "test-",
+        "type": "prefix"
+      },
+      {
+        "value": "test/**/*.js",
+        "type": "glob"
+      },
+      {
+        "value": "\\.jsx$",
+        "type": "regexp"
+      }
+    ],
+    "include": []
+  }
 }

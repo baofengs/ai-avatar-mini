@@ -3,7 +3,7 @@ import {
   clamp,
   Curves,
   bottomSheetSuspendedCurve,
-} from '../../custom-route/util';
+} from '../../common/custom-route/util';
 
 const { timing, shared } = wx.worklet;
 

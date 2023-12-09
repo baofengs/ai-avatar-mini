@@ -1,5 +1,16 @@
 <navigation-bar title="Avatar" back="{{false}}" />
-<view class="content">
-  <view class="item" bind:tap="goto"></view>
-  <view class="item" bind:tap="gotoDictionary"></view>
+
+<view class="container">
+  <view class="avatar-wrapper">
+    <image wx:if="{{avatar}}" class="avatar" src="{{avatar}}" bind:tap="loadAvatar"></image>
+  </view>
+  <view class="prompt dank-mono">{{prompt}}</view>
+  <!-- <textarea class="description" type="text" value="{{prompt}}"></textarea> -->
+  <input
+    class="description"
+    placeholder="say something..."
+    type="text"
+    bindinput="bindKeyInput"
+    value="{{description}}"
+  />
 </view>

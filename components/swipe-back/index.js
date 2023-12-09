@@ -1,5 +1,4 @@
-// components/swiper-back/index.js
-import { GestureState, lerp, clamp, Curves } from '../../custom-route/util';
+import { GestureState, lerp, clamp, Curves } from '../../common/custom-route/util';
 
 const { timing } = wx.worklet;
 
