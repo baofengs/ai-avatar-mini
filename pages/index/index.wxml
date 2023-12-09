@@ -1,10 +1,9 @@
-<navigation-bar title="Ai" back="{{false}}" background="linear-gradient(to bottom, #06bdfc, transparent)" />
-<!-- <navigation-bar title="Ai" back="{{false}}" background="rgba(249, 249, 249)" /> -->
+<navigation-bar title="Avatar" back="{{false}}" />
 <view class="content">
-  <view class="item"></view>
+  <view class="item" bind:tap="goto"></view>
 </view>
-<!-- <view class="section">Custom Page Route Example</view>
-<block wx:for="{{list}}" wx:key="id">
+<!-- <view class="section">Custom Page Route Example</view> -->
+<!-- <block wx:for="{{list}}" wx:key="id">
   <view
     class="item"
     bind:tap="goNextPage"
@@ -12,6 +11,5 @@
     data-next-route-type="{{item.nextRouteType}}"
     data-disable-drag="{{item.disableDrag}}"
     data-fullscreen="{{item.fullscreen}}"
-    >{{item.content}}
-    </view>
+  >{{item.content}}</view>
 </block> -->

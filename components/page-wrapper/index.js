@@ -1,5 +1,7 @@
+// half-page/index.js
 import {
   GestureState,
+  lerp,
   clamp,
   Curves,
   bottomSheetSuspendedCurve,
@@ -21,7 +23,7 @@ const _minFlingVelocity = 500;
 const _closeProgressThreshold = 0.6;
 const _duration = 400;
 
-Page({
+Component({
   data: {
     list: getList(40),
     nextRouteType: '',
@@ -67,6 +69,7 @@ Page({
     this.createSelectorQuery()
       .select('.container')
       .boundingClientRect((rect) => {
+        console.log('rect: ', rect);
         this.childHeight.value = rect.height;
       })
       .exec();
@@ -145,6 +148,7 @@ Page({
         }
       );
     } else {
+      // TODO: 结合松手时的速度作 spring 动画
       const remainingFraction = t;
       const simulationDuration = _duration * remainingFraction;
       const animationCurve = Curves.easeOutCubic;

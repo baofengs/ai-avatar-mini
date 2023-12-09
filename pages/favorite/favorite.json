@@ -1,3 +1,6 @@
 {
-  "component": true
+  "usingComponents": {
+    "swipe-back": "/components/swipe-back/index",
+    "page-wrapper": "/components/page-wrapper/index"
+  }
 }

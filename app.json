@@ -1,5 +1,5 @@
 {
-  "pages": ["pages/index/index", "index/index", "list/index"],
+  "pages": ["pages/index/index", "pages/favorite/favorite", "index/index", "list/index"],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

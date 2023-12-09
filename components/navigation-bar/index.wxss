@@ -36,7 +36,7 @@
 }
 .navigation-bar__inner
   .navigation-bar__left
-  .navigation-bar__btn_goback:active {
+  /* .navigation-bar__btn_goback:active  */ {
   opacity: 0.5;
 }
 .navigation-bar__inner .navigation-bar__center {

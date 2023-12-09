@@ -71,6 +71,13 @@ Page({
 
   onLoad() {},
 
+  goto() {
+    wx.navigateTo({
+      url: '/pages/favorite/favorite',
+      routeType: CustomRotue.CupertinoModal
+    })
+  },
+
   goNextPage(e) {
     const { routeType, nextRouteType, fullscreen, disableDrag } =
       e.currentTarget.dataset;

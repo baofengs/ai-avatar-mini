@@ -1,6 +1,4 @@
-<swipe-back></swipe-back>
-<page-wrapper></page-wrapper>
-<!-- <vertical-drag-gesture-handler
+<vertical-drag-gesture-handler
   tag="pan"
   shouldResponseOnMove="shouldPanResponse"
   simultaneousHandlers="{{ ['scroll'] }}"
@@ -42,4 +40,4 @@
       </scroll-view>
     </vertical-drag-gesture-handler>
   </view>
-</vertical-drag-gesture-handler> -->
+</vertical-drag-gesture-handler>
